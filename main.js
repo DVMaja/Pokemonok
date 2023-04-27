@@ -2,7 +2,7 @@ import Pokemon from "./Pokemon.js";
 const POKEMONOK = [];
 
 $(function () {
-  let pokVegpont = "https://pokeapi.co/api/v2/pokemon/1000";
+  let pokVegpont = "https://pokeapi.co/api/v2/pokemon/160";
 
   adatbeolvas(pokVegpont, POKEMONOK, pokemonMegjelenit);
 });
@@ -19,11 +19,14 @@ function adatbeolvas(vegpont, lista, callbackFv){
     })
 }
 
-function pokemonMegjelenit(pokemon) {
-  console.log(pokemon);
+function pokemonMegjelenit(adat) {
+  console.log(adat);
+  console.log(adat.name);
 
-  /* const pokeObj = {
-    eleresiUt: adat.sprites.front_default,
-    pokemonNEv: adat.name,
-  }; */
+   
+
+  const ELEM = $(".tarolo");
+  const pokemon1 = new Pokemon(adat.name, adat.sprites.front_default, ELEM);
+
 }
+
